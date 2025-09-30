@@ -156,6 +156,31 @@ public class ManageStudent {
         arr = appendStudent(arr, student1);
         System.out.println("== All Students ==");
         for (Student s : arr) System.out.println(s);
+
+        // 11) two classes each with 3 students
+        Student[][] school = {{
+            new Student(87, "Zak", 19, 18),
+                new Student(88, "Ahmed", 20, 17),
+                new Student(89, "Hamza", 21, 14),
+        },{
+            new Student(90, "Rhita", 19, 18),
+                new Student(91, "Yassine", 19, 12),
+                new Student(92, "Amine", 19, 13)
+        }};
+        for (int i = 0; i <= school.length - 1; i++) {
+            for (int j = 0; j <= school[i].length - 1; j++) {
+                System.out.println("Name of student " + (j+1)  + " in class " + (i+1) +" is : " + school[i][j].getName());
+            }
+        }
+        for (int i = 0; i <= school.length - 1; i++) {
+            Student topStudent = school[i][0];
+            for  (int j = 1; j <= school[i].length - 1; j++) {
+                if (school[i][j].getGrade() >= topStudent.getGrade()) {
+                    topStudent = school[i][j];
+                }
+            }
+            System.out.println("Top student of class " + (i+1) + " is : " + topStudent);
+        }
     }
 }
 
