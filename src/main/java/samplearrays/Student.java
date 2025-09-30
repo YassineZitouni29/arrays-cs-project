@@ -1,9 +1,7 @@
 package samplearrays;
 
-import java.util.Arrays;
-import java.util.Comparator;
 
-class Student {
+public class Student {
     private int id;
     private String name;
     private int age;
